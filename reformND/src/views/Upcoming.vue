@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const conferenceItems = [
   'Coffee/Donut Fellowship Saturday Morning {8:30-9:30}',
   '(Howard) MC The Conference - Opening Prayer - {9:45}',
