@@ -1,19 +1,21 @@
 <script setup lang="ts">
+import {ref} from 'vue';
 import {RouterLink, RouterView} from 'vue-router';
 import HelloWorld from './components/HelloWorld.vue';
+
+const dateOfConference = new Date("10/08/2023")
+const shouldShowUpcomingConferenceLink = ref(new Date() < dateOfConference)
 </script>
 
 <template>
   <header>
-
     <div class="wrapper">
       <HelloWorld msg="Reformation North Dakota" />
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/upcoming" v-if=shouldShowUpcomingConferenceLink>Upcoming Conference </RouterLink>
         <RouterLink to="/pastConferences">Past Conferences</RouterLink>
         <a href="https://www.chbaptist.org/" target="_blank">Capitol Heights Baptist Church</a>
-
       </nav>
     </div>
   </header>
